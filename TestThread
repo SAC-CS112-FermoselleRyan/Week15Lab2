@@ -1,0 +1,23 @@
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class TestDice {
+
+	public static void maint(String[] args){
+		
+		System.out.println("Main started.");
+		ExecutorService threadExecutor = Executors.newCachedThreadPool();
+		
+		for (int i = 1; i <= 25; i++){
+			
+			threadExecutor.execute(new DiceGame("#"+i+"Die"));
+			
+		}
+		
+		threadExecutor.shutdown();
+		System.out.println("Exited");
+		
+	}
+	
+}
