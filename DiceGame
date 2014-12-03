@@ -1,0 +1,30 @@
+
+
+
+public abstract class DiceGame implements Runnable {
+	
+	String name;
+	
+	public DiceGame(String name){
+		
+		this.name = name;
+	}
+	
+	public void run(){
+		
+		long starttime = System.currentTimeMillis();
+		System.out.println(name + "What has Started.");
+		
+		int thrownValue = 1 + (int)(Math.random() * 6);
+		System.out.println(name + "rolled:" + thrownValue);
+		
+		long completionTime = System.currentTimeMillis()-starttime;
+		System.out.println(name + "completed in" + completionTime + "MilliSeconds!");
+		
+		
+		
+		
+	}
+
+		
+	}
